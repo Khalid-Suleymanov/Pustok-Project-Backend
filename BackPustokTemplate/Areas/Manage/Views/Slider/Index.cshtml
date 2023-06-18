@@ -1,0 +1,52 @@
+﻿@using BackPustokTemplate
+@model List<Slider>
+@{
+    ViewData["Title"] = "Index";
+    int dataOrder = 0;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-between">
+            <h1>Slider</h1> <a class="btn btn-primary" asp-controller="slider" asp-action="create">Create</a>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Order</th>
+                        <th scope="col">FirstTitle</th>
+                        <th scope="col">SecondTitle</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Button Text</th>
+                        <th scope="col">Button Url</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        dataOrder++;
+                        <tr>
+                            <td>
+                                <a asp-action="edit" asp-controller="slider" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="delete" asp-controller="slider" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            </td>
+                            <th scope="row">@dataOrder</th>
+                            <td>@item.Order</td>
+                            <td>@item.Title1</td>
+                            <td>@item.Title2</td>
+                            <td>@item.ImageName</td>
+                            <td>@item.BtnText</td>
+                            <td>@item.BtnUrl</td>
+                            <td>@item.Desc</td>
+                            
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

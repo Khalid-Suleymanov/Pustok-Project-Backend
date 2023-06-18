@@ -1,0 +1,35 @@
+﻿@using BackPustokTemplate
+@model Slider
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Slider Create</h1>
+        </div>
+        <div class="col-md-8">
+            <form method="post" asp-action="create">
+                <div class="form-group">
+                    <label asp-for="Title1">Order</label>
+                    <input asp-for="Order" class="form-control">
+                    <label asp-for="Title1">FirstTitle</label>
+                    <input asp-for="Title1" class="form-control">
+                    <label asp-for="Title1">SecondTitle</label>
+                    <input asp-for="Title2" class="form-control">
+                    <label asp-for="Title1">Image</label>
+                    <input asp-for="ImageName" class="form-control">
+                    <label asp-for="Title1">Description</label>
+                    <input asp-for="Desc" class="form-control">
+                    <label asp-for="Title1">Button URL</label>
+                    <input asp-for="BtnUrl" class="form-control">
+                    <label asp-for="Title1">Button Text</label>
+                    <input asp-for="BtnText" class="form-control">
+                    <span class="text-danger" asp-validation-for="Title1"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
